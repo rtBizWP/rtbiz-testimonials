@@ -7,6 +7,9 @@
  * Time: 6:57 PM
  */
 class RT_Biz_Testimonial {
+    
+     var $menu_position = 33;
+     
 	function __construct() {
 		add_action( 'plugins_loaded', 'plugins_loaded' );
 		add_action( 'init', array( &$this, 'init_0' ), 0 );
@@ -68,6 +71,8 @@ class RT_Biz_Testimonial {
 				'show_ui'         => true,
 				'taxonomies'      => array( 'post_tag' ),
 				'capability_type' => 'testimonial',
+                                'menu_icon'   => RT_TESTIMONIAL_URL.'app/assets/img/testimonial-16X16.png',
+                                'menu_position' => $this->menu_position,
 				'supports'        => array(
 					'title',
 					'editor',
