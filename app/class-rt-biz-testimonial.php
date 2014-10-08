@@ -8,7 +8,7 @@
  */
 class RT_Biz_Testimonial {
     
-     var $menu_position = 33;
+	var $menu_position = 37;
      
 	function __construct() {
 		add_action( 'plugins_loaded', 'plugins_loaded' );
@@ -20,12 +20,10 @@ class RT_Biz_Testimonial {
 	}
 
 	function register_rt_portfolio_testimonial_module( $modules ) {
-		global $rt_wiki_roles;
 		$module_key = ( function_exists( 'rt_biz_sanitize_module_key' ) ) ? rt_biz_sanitize_module_key( RT_TESTIMONIAL ) : '';
 		$modules[ $module_key ] = array(
-			'label' => __( 'Portfolio & Testimonial' ),
+			'label' => __( 'rtBiz Testimonial' ),
 			'post_types' => array(
-				'portfolio',
 				'testimonial',
 			),
 		);
@@ -71,8 +69,8 @@ class RT_Biz_Testimonial {
 				'show_ui'         => true,
 				'taxonomies'      => array( 'post_tag' ),
 				'capability_type' => 'testimonial',
-                                'menu_icon'   => RT_TESTIMONIAL_URL.'app/assets/img/testimonial-16X16.png',
-                                'menu_position' => $this->menu_position,
+				'menu_icon'   => RT_TESTIMONIAL_URL.'app/assets/img/testimonial-16X16.png',
+				'menu_position' => $this->menu_position,
 				'supports'        => array(
 					'title',
 					'editor',
@@ -91,4 +89,4 @@ class RT_Biz_Testimonial {
 		add_rewrite_rule( '^testimonials/tag/([^/]*)/([^/]*)/([^/]*)/?','index.php?post_type=testimonial&tag=$matches[1]&paged=$matches[3]', 'top' );
 		add_rewrite_rule( '^testimonials/tag/([^/]*)/?','index.php?post_type=testimonial&tag=$matches[1]', 'top' );
 	}
-} 
+}

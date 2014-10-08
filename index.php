@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: rtBiz Portfolio and Testimonials
+Plugin Name: rtBiz Testimonials
 Plugin URI: http://rtcamp.com/
-Description: This plugin add Portfolio and Testimonial support
-Version: 0.1-beta
+Description: This plugin add Testimonial support
+Version: 0.2
 Author: rtcamp
 Author URI: http://rtcamp.com/
 */
@@ -16,8 +16,8 @@ if ( ! defined( 'RT_TESTIMONIAL_URL' ) ) {
 
 add_action( 'rt_biz_init', 'rt_biz_testimonial_init', 1 );
 
-function rt_biz_testimonial_init(){
+function rt_biz_testimonial_init() {
 	$rt_biz_portfolio_testimonial_loader = new RT_WP_Autoload( trailingslashit( dirname( __FILE__ ) ) . 'app' );
 
-        $rt_biz_init = new RT_Biz_Testimonial();
+	$rt_biz_init = new RT_Biz_Testimonial();
 }
