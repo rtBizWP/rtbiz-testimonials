@@ -54,6 +54,19 @@ class RT_Biz_Testimonial {
 					)
 				)
 			);
+
+			// EDD Support for Reviews
+			p2p_register_connection_type(
+				array(
+					'name'        => 'testimonial_edd_product',
+					'to'          => 'edd_download',
+					'from'        => 'testimonial',
+					'title'       => array(
+						'to'   => 'Testimonial',
+						'from' => 'Product',
+					)
+				)
+			);
 		}
 
 	}
