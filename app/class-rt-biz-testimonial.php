@@ -44,8 +44,8 @@ class RT_Biz_Testimonial {
 
 			p2p_register_connection_type(
 				array(
-					'name'        => 'testimonial_' . rt_biz_get_person_post_type(),
-					'to'          => rt_biz_get_person_post_type(),
+					'name'        => 'testimonial_' . rt_biz_get_contact_post_type(),
+					'to'          => rt_biz_get_contact_post_type(),
 					'from'        => 'testimonial',
 					'cardinality' => 'one-to-one',
 					'title'       => array(
