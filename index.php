@@ -14,7 +14,7 @@ if ( ! defined( 'RT_TESTIMONIAL_URL' ) ) {
 	define( 'RT_TESTIMONIAL_URL', plugin_dir_url( __FILE__ ) );
 }
 
-add_action( 'rt_biz_init', 'rt_biz_testimonial_init', 1 );
+add_action( 'rtbiz_init', 'rt_biz_testimonial_init', 1 );
 
 function rt_biz_testimonial_init() {
 	$rt_biz_portfolio_testimonial_loader = new RT_WP_Autoload( trailingslashit( dirname( __FILE__ ) ) . 'app' );
